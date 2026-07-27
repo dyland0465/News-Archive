@@ -4,7 +4,8 @@ from src.database import init_db, SaveToDB
 
 
 def fetchTopHeadlines():
-    url = f"https://newsapi.org{COUNTRY}&apiKey={API_KEY}"
+    url = f"https://newsapi.org/v2/top-headlines?country={
+        COUNTRY}&apiKey={API_KEY}"
     print(f"[API] Fetching top headlines for region: '{COUNTRY}'...")
 
     try:

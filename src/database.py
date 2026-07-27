@@ -12,13 +12,13 @@ def init_db():
 
         cursor.execute("""
 
-                CREATE TABLE IF NOT EXISTS headlines (
-                id INT PRIMARY KEY,
+                CREATE TABLE IF NOT EXISTS headlines(
+                id INT AUTO_INCREMENT PRIMARY KEY,
                 fetch_date DATE NOT NULL,
                 headline VARCHAR(500) NOT NULL,
                 url_link VARCHAR(1000) NOT NULL,
-                UNIQUE KEY unique_story (fetch_date, headline(255))
-            )
+                UNIQUE KEY unique_story(fetch_date, headline(255))
+                )
         """)
         connection.commit()
 
@@ -60,7 +60,7 @@ def SaveToDB(articles):
         print(f"Processed {cursor.rowcount} new headlines successfully")
 
     except Error as e:
-        print("Error: Insertion failed: {e}")
+        print(f"Error: Insertion failed: {e}")
     finally:
         if connection and connection.is_connected():
             cursor.close()
