@@ -1,0 +1,4 @@
+1. figure out how to get mariadb to work
+2. test for a couple of days
+3. finally push to github
+4. look into adding to resume
